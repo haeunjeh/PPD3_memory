@@ -1,0 +1,54 @@
+GTF_FILE=/data/genomes/TAIR10/Arabidopsis_thaliana.TAIR10.38.gtf
+OUT_DIR=/data5/huj181/PPD3_memory/QoRTs_out
+BASE_DIR=/data5/huj181/PPD3_memory/CleanSTAR_align_out
+
+mkdir ${OUT_DIR}
+
+mkdir ${OUT_DIR}/WT2
+mkdir ${OUT_DIR}/WT3
+
+mkdir ${OUT_DIR}/T+_1
+mkdir ${OUT_DIR}/T+_2
+mkdir ${OUT_DIR}/T+_3
+mkdir ${OUT_DIR}/T+_4
+mkdir ${OUT_DIR}/T+_5
+mkdir ${OUT_DIR}/T+_6
+
+mkdir ${OUT_DIR}/Gen1_1
+mkdir ${OUT_DIR}/Gen1_2
+mkdir ${OUT_DIR}/Gen1_3
+
+mkdir ${OUT_DIR}/Gen2_1
+mkdir ${OUT_DIR}/Gen2_2
+mkdir ${OUT_DIR}/Gen2_3
+mkdir ${OUT_DIR}/Gen2_4
+mkdir ${OUT_DIR}/Gen2_5
+mkdir ${OUT_DIR}/Gen2_6
+mkdir ${OUT_DIR}/Gen2_7
+mkdir ${OUT_DIR}/Gen2_8
+
+
+#ls STAR_align_out| sed s'#\(.*\)#ts QoRTs QC --stranded --minMAPQ 25 --runFunctions GeneCalcs,JunctionCalcs,annotatedSpliceExonCounts,writeKnownSplices,writeNovelSplices,writeSpliceExon,writeGeneCounts,writeDEXSeq,writeGeneBody,writeDESeq ${BASE_DIR}/\1/Aligned.sortedByCoord.out.bam ${GTF_FILE}  ${OUT_DIR}/\1/#'
+
+QoRTs QC --stranded --minMAPQ 25 --maxReadLength 150 --runFunctions GeneCalcs,JunctionCalcs,annotatedSpliceExonCounts,writeKnownSplices,writeNovelSplices,writeSpliceExon,writeGeneCounts,writeDEXSeq,writeGeneBody,writeDESeq ${BASE_DIR}/WT2.bam ${GTF_FILE}  ${OUT_DIR}/WT2/
+QoRTs QC --stranded --minMAPQ 25 --maxReadLength 150 --runFunctions GeneCalcs,JunctionCalcs,annotatedSpliceExonCounts,writeKnownSplices,writeNovelSplices,writeSpliceExon,writeGeneCounts,writeDEXSeq,writeGeneBody,writeDESeq ${BASE_DIR}/WT3.bam ${GTF_FILE}  ${OUT_DIR}/WT3/
+
+QoRTs QC --stranded --minMAPQ 25 --maxReadLength 150 --runFunctions GeneCalcs,JunctionCalcs,annotatedSpliceExonCounts,writeKnownSplices,writeNovelSplices,writeSpliceExon,writeGeneCounts,writeDEXSeq,writeGeneBody,writeDESeq ${BASE_DIR}/T+_1.bam ${GTF_FILE}  ${OUT_DIR}/T+_1/
+QoRTs QC --stranded --minMAPQ 25 --maxReadLength 150 --runFunctions GeneCalcs,JunctionCalcs,annotatedSpliceExonCounts,writeKnownSplices,writeNovelSplices,writeSpliceExon,writeGeneCounts,writeDEXSeq,writeGeneBody,writeDESeq ${BASE_DIR}/T+_2.bam ${GTF_FILE}  ${OUT_DIR}/T+_2/
+QoRTs QC --stranded --minMAPQ 25 --maxReadLength 150 --runFunctions GeneCalcs,JunctionCalcs,annotatedSpliceExonCounts,writeKnownSplices,writeNovelSplices,writeSpliceExon,writeGeneCounts,writeDEXSeq,writeGeneBody,writeDESeq ${BASE_DIR}/T+_3.bam ${GTF_FILE}  ${OUT_DIR}/T+_3/
+QoRTs QC --stranded --minMAPQ 25 --maxReadLength 150 --runFunctions GeneCalcs,JunctionCalcs,annotatedSpliceExonCounts,writeKnownSplices,writeNovelSplices,writeSpliceExon,writeGeneCounts,writeDEXSeq,writeGeneBody,writeDESeq ${BASE_DIR}/T+_4.bam ${GTF_FILE}  ${OUT_DIR}/T+_4/
+QoRTs QC --stranded --minMAPQ 25 --maxReadLength 150 --runFunctions GeneCalcs,JunctionCalcs,annotatedSpliceExonCounts,writeKnownSplices,writeNovelSplices,writeSpliceExon,writeGeneCounts,writeDEXSeq,writeGeneBody,writeDESeq ${BASE_DIR}/T+_5.bam ${GTF_FILE}  ${OUT_DIR}/T+_5/
+
+
+QoRTs QC --stranded --minMAPQ 25 --maxReadLength 150 --runFunctions GeneCalcs,JunctionCalcs,annotatedSpliceExonCounts,writeKnownSplices,writeNovelSplices,writeSpliceExon,writeGeneCounts,writeDEXSeq,writeGeneBody,writeDESeq ${BASE_DIR}/Gen1_1.bam ${GTF_FILE}  ${OUT_DIR}/Gen1_1/
+QoRTs QC --stranded --minMAPQ 25 --maxReadLength 150 --runFunctions GeneCalcs,JunctionCalcs,annotatedSpliceExonCounts,writeKnownSplices,writeNovelSplices,writeSpliceExon,writeGeneCounts,writeDEXSeq,writeGeneBody,writeDESeq ${BASE_DIR}/Gen1_2.bam ${GTF_FILE}  ${OUT_DIR}/Gen1_2/
+QoRTs QC --stranded --minMAPQ 25 --maxReadLength 150 --runFunctions GeneCalcs,JunctionCalcs,annotatedSpliceExonCounts,writeKnownSplices,writeNovelSplices,writeSpliceExon,writeGeneCounts,writeDEXSeq,writeGeneBody,writeDESeq ${BASE_DIR}/Gen1_3.bam ${GTF_FILE}  ${OUT_DIR}/Gen1_3/
+
+QoRTs QC --stranded --minMAPQ 25 --maxReadLength 150 --runFunctions GeneCalcs,JunctionCalcs,annotatedSpliceExonCounts,writeKnownSplices,writeNovelSplices,writeSpliceExon,writeGeneCounts,writeDEXSeq,writeGeneBody,writeDESeq ${BASE_DIR}/Gen2_1.bam ${GTF_FILE}  ${OUT_DIR}/Gen2_1/
+QoRTs QC --stranded --minMAPQ 25 --maxReadLength 150 --runFunctions GeneCalcs,JunctionCalcs,annotatedSpliceExonCounts,writeKnownSplices,writeNovelSplices,writeSpliceExon,writeGeneCounts,writeDEXSeq,writeGeneBody,writeDESeq ${BASE_DIR}/Gen2_2.bam ${GTF_FILE}  ${OUT_DIR}/Gen2_2/
+QoRTs QC --stranded --minMAPQ 25 --maxReadLength 150 --runFunctions GeneCalcs,JunctionCalcs,annotatedSpliceExonCounts,writeKnownSplices,writeNovelSplices,writeSpliceExon,writeGeneCounts,writeDEXSeq,writeGeneBody,writeDESeq ${BASE_DIR}/Gen2_3.bam ${GTF_FILE}  ${OUT_DIR}/Gen2_3/
+QoRTs QC --stranded --minMAPQ 25 --maxReadLength 150 --runFunctions GeneCalcs,JunctionCalcs,annotatedSpliceExonCounts,writeKnownSplices,writeNovelSplices,writeSpliceExon,writeGeneCounts,writeDEXSeq,writeGeneBody,writeDESeq ${BASE_DIR}/Gen2_4.bam ${GTF_FILE}  ${OUT_DIR}/Gen2_4/
+QoRTs QC --stranded --minMAPQ 25 --maxReadLength 150 --runFunctions GeneCalcs,JunctionCalcs,annotatedSpliceExonCounts,writeKnownSplices,writeNovelSplices,writeSpliceExon,writeGeneCounts,writeDEXSeq,writeGeneBody,writeDESeq ${BASE_DIR}/Gen2_5.bam ${GTF_FILE}  ${OUT_DIR}/Gen2_5/
+QoRTs QC --stranded --minMAPQ 25 --maxReadLength 150 --runFunctions GeneCalcs,JunctionCalcs,annotatedSpliceExonCounts,writeKnownSplices,writeNovelSplices,writeSpliceExon,writeGeneCounts,writeDEXSeq,writeGeneBody,writeDESeq ${BASE_DIR}/Gen2_6.bam ${GTF_FILE}  ${OUT_DIR}/Gen2_6/
+QoRTs QC --stranded --minMAPQ 25 --maxReadLength 150 --runFunctions GeneCalcs,JunctionCalcs,annotatedSpliceExonCounts,writeKnownSplices,writeNovelSplices,writeSpliceExon,writeGeneCounts,writeDEXSeq,writeGeneBody,writeDESeq ${BASE_DIR}/Gen2_7.bam ${GTF_FILE}  ${OUT_DIR}/Gen2_7/
+QoRTs QC --stranded --minMAPQ 25 --maxReadLength 150 --runFunctions GeneCalcs,JunctionCalcs,annotatedSpliceExonCounts,writeKnownSplices,writeNovelSplices,writeSpliceExon,writeGeneCounts,writeDEXSeq,writeGeneBody,writeDESeq ${BASE_DIR}/Gen2_8.bam ${GTF_FILE}  ${OUT_DIR}/Gen2_8/
