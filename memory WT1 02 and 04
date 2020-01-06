@@ -10,12 +10,9 @@ GTF_FILE=/data/genomes/TAIR10/Arabidopsis_thaliana.TAIR10.38.gtf
 BASE_DIR=/data5/huj181/PPD3_memory/trim_galore
 OUT_DIR=/data5/huj181/PPD3_memory/CleanSTAR_align_out
 
-mkdir ${OUT_DIR}/WT1_1
-mkdir ${OUT_DIR}/WT1_2
+mkdir ${OUT_DIR}/WT1
 
 ulimit -n 2048
 
 
-STAR --genomeDir ${GENOME_INDEX_DIR} --readFilesCommand zcat --readFilesIn  ${BASE_DIR}/WT1/WT1_1_val_1.fq.gz ${BASE_DIR}/WT1/WT1_2_val_2.fq.gz --outSAMtype BAM SortedByCoordinate --limitBAMsortRAM 150000000000 --twopassMode Basic --outFilterMultimapNmax 1 --quantMode TranscriptomeSAM --runThreadN ${THREADS} --outFileNamePrefix ${OUT_DIR}/WT1_1/
-#STAR --genomeDir ${GENOME_INDEX_DIR} --readFilesCommand zcat --readFilesIn  ${BASE_DIR}/WT1/V300033284_L3_HK500RDARAzyaEABKRAAPEI-572_1_val_1.fq.gz ${BASE_DIR}/WT1/V300033284_L3_HK500RDARAzyaEABKRAAPEI-572_2_val_2.fq.gz --outSAMtype BAM SortedByCoordinate --limitBAMsortRAM 150000000000 --twopassMode Basic --outFilterMultimapNmax 1 --quantMode TranscriptomeSAM --runThreadN ${THREADS} --outFileNamePrefix ${OUT_DIR}/WT1_2/
-
+STAR --genomeDir ${GENOME_INDEX_DIR} --readFilesCommand zcat --readFilesIn  ${BASE_DIR}/WT1/WT1_1_val_1.fq.gz ${BASE_DIR}/WT1/WT1_2_val_2.fq.gz --outSAMtype BAM SortedByCoordinate --limitBAMsortRAM 150000000000 --twopassMode Basic --outFilterMultimapNmax 1 --quantMode TranscriptomeSAM --runThreadN ${THREADS} --outFileNamePrefix ${OUT_DIR}/WT1/
